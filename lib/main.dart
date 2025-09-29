@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-
-  List  myList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("the first application "),
-          backgroundColor: Colors.amber,
-        ),
         body: Center(
-          child: Icon(
-            Icons.notifications_paused_rounded,
-            color: Colors.amber,
-            size: 50,
+          child: Stack(
+            children: [
+              Container(width: 200, height: 200, color: Colors.blue),
+              Container(width: 150, height: 150, color: Colors.red),
+              Positioned(
+                bottom: 0,
+                right: 0,
+                left: 150,
+                top: 0,
+                child: Container(width: 50, height: 50, color: Colors.yellow),
+              ),
+            ],
           ),
         ),
       ),
